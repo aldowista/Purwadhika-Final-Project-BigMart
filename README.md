@@ -36,6 +36,7 @@ Dataset source: The data is from Analytics Vidhya (https://datahack.analyticsvid
  - Result
  
  # Model Result:
+  - Gradient Boosting Regression
   ![alt text](https://github.com/aldowista/Purwadhika-Final-Project-BigMart/blob/main/Result_1.JPG?raw=true)
   ![alt text](https://github.com/aldowista/Purwadhika-Final-Project-BigMart/blob/main/Result_2.JPG?raw=true)
   ![alt text](https://github.com/aldowista/Purwadhika-Final-Project-BigMart/blob/main/Result_3.JPG?raw=true)
