@@ -6,3 +6,8 @@ The data scientists at BigMart have collected 2013 sales data for 1559 products 
 Using this model, BigMart will try to understand the properties of products and outlets which play a key role in increasing sales.
 
 ![alt text](https://github.com/aldowista/Purwadhika-Final-Project-BigMart/blob/main/BigMart_Legend.JPG?raw=true)
+
+--------------------------------------
+# DataSet
+--------------------------------------
+Dataset source: The data is from Analytics Vidhya (https://datahack.analyticsvidhya.com/contest/practice-problem-big-mart-sales-iii)
