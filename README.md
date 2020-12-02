@@ -1,2 +1,4 @@
-# Purwadhika-Final-Project_Employee_Attrition
+# Purwadhika-Final-Project_BigMart
 Final Project Purwadhika
+--------------------------------------
+
