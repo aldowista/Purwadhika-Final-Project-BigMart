@@ -7,7 +7,37 @@ Using this model, BigMart will try to understand the properties of products and 
 
 ![alt text](https://github.com/aldowista/Purwadhika-Final-Project-BigMart/blob/main/BigMart_Legend.JPG?raw=true)
 
---------------------------------------
-# DataSet #
---------------------------------------
+
+# DataSet 
 Dataset source: The data is from Analytics Vidhya (https://datahack.analyticsvidhya.com/contest/practice-problem-big-mart-sales-iii)
+
+# Goals
+ - Gain insight from dataset
+ - Predict Item Outlet Sales (Sales Prediction)
+
+# Model
+ - Linear Regression
+ - Lasso Regression
+ - Ridge Regression
+ - Decision Tree Regression
+ - Random Forest Regression
+ - Gradien Boosting Regression
+ 
+# Work Steps:
+ - Data Preparation
+    - Resolve Missing Value
+    - Resolve Inconsistency Data
+    - Resolve Outlier Data
+ - Exploratory Data Analysis and Data Visualization
+ - Feature Engineering 
+    - Feature Important
+ ![alt text](https://github.com/aldowista/Purwadhika-Final-Project-BigMart/blob/main/BigMart_Feature_Imp.JPG?raw=true)
+ - Modelling
+ - Result
+ 
+ # Model Result:
+  ![alt text](https://github.com/aldowista/Purwadhika-Final-Project-BigMart/blob/main/Result_1.JPG?raw=true)
+  ![alt text](https://github.com/aldowista/Purwadhika-Final-Project-BigMart/blob/main/Result_2.JPG?raw=true)
+  ![alt text](https://github.com/aldowista/Purwadhika-Final-Project-BigMart/blob/main/Result_3.JPG?raw=true)
+ 
+ 
