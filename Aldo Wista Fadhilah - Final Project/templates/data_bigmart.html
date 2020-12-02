@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+<html>
+    <head>
+        <style>
+            .row {
+               /* border: 2px solid red; */
+               padding: 50px;
+               margin-right: 50px
+            }
+            </style>
+    </head>
+    <body>
+        {% block body %}
+            <h1 style="margin-top:20px"><center>Data BigMart</center></h1>
+            <div class="row", style="margin-top:40px">
+                <div class="col", style="margin-left: 150px; margin-right: 150px">
+                    <p style="text-indent: 50px; text-align:justify">The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities. Also, certain attributes of each product and store have been defined. The aim is to build a predictive model and predict the sales of each product at a particular outlet.
+                    Using this model, BigMart will try to understand the properties of products and outlets which play a key role in increasing sales.        
+                    Please note that the data may have missing values as some stores might not report all the data due to technical glitches. Hence, it will be required to treat them accordingly.</p>
+                    <p style="margin-left:150px">  <b>1. Item_Identifier</b> = 	Unique product ID </p>
+                    <p style="margin-left:150px">  <b>2. Item_Weight </b>= Weight of product</p>
+                    <p style="margin-left:150px">  <b>3. Item_Fat_Content</b> = Whether the product is low fat or not</p>
+                    <p style="margin-left:150px">  <b>4. Item_Visibility </b>= The % of total display area of all products in a store allocated to the particular product </p>
+                    <p style="margin-left:150px">  <b>5. Item_Type </b>= The category to which the product belongs</p>
+                    <p style="margin-left:150px">  <b>6. Item_MRP</b> = Maximum Retail Price (list price) of the product</p>
+                    <p style="margin-left:150px">  <b>7. Outlet_Identifier</b> = Unique store ID</p>
+                    <p style="margin-left:150px">  <b>8. Outlet_Establishment_Year </b>= The year in which store was established</p>
+                    <p style="margin-left:150px">  <b>9. Outlet_Size </b>= The size of the store in terms of ground area covered</p>
+                    <p style="margin-left:150px">  <b>10. Outlet_Location_Type </b>= The type of city in which the store is located</p>
+                    <p style="margin-left:150px">  <b>11. Outlet_Type </b>= Whether the outlet is just a grocery store or some sort of supermarket</p>
+                    <p style="margin-left:150px">  <b>12. Item_Outlet_Sales </b>= Sales of the product in the particular store. This is the outcome variable to be predicted</p>
+                </div>
+            </div>
+            <table class="table table-striped" , style="margin-right: 30px;margin-left: 25px;margin-top: 30px;"> 
+                <thead>
+                    <tr>
+                        {% for item in data.columns %}
+                            <th> {{item}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, item in data.iterrows() %}
+                        <tr>
+                            {% for col in item %}
+                                <td> {{col}}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        {% endblock body%}
+    </body>
+</html>

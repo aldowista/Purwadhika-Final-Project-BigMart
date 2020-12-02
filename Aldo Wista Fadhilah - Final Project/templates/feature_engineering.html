@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+<html>
+    <head>
+        <style>
+            .row {
+               /* border: 2px solid red; */
+               padding: 50px;
+               margin-right: 50px
+            }
+            </style>
+    </head>
+    <body>
+        {% block body %}
+            <h1 style="margin-top:20px"><center>Feature Engineering</center></h1>
+            <div class="row", style="margin-top:40px">
+                <div class="col", style="margin-left: 150px; margin-right: 150px">
+                    <p style="margin-left:150px">  <b>1. Item_Identifier</b> = 	Unique product ID </p>
+                    <p style="margin-left:150px">  <b>2. Item_Weight </b>= Weight of product</p>
+                    <p style="margin-left:150px">  <b>3. Item_Fat_Content</b> = Whether the product is low fat or not</p>
+                    <p style="margin-left:150px">  <b>4. Item_Visibility </b>= The % of total display area of all products in a store allocated to the particular product </p>
+                    <p style="margin-left:150px">  <b>5. Item_Type </b>= The category to which the product belongs</p>
+                    <p style="margin-left:150px">  <b>6. Item_MRP</b> = Maximum Retail Price (list price) of the product</p>
+                    <p style="margin-left:150px">  <b>7. Outlet_Identifier</b> = Unique store ID</p>
+                    <p style="margin-left:150px">  <b>8. Outlet_Establishment_Year </b>= The year in which store was established</p>
+                    <p style="margin-left:150px">  <b>9. Outlet_Size </b>= The size of the store in terms of ground area covered</p>
+                    <p style="margin-left:150px">  <b>10. Outlet_Location_Type </b>= The type of city in which the store is located</p>
+                    <p style="margin-left:150px">  <b>11. Outlet_Type </b>= Whether the outlet is just a grocery store or some sort of supermarket</p>
+                    <p style="margin-left:150px">  <b>12. Item_Outlet_Sales </b>= Sales of the product in the particular store. This is the outcome variable to be predicted</p>
+                    <p style="margin-left:150px">  <b>13. Item_Type_Combined</b> = 	Item Type Classification </p>
+                    <p style="margin-left:150px">  <b>14. Id_Item_First </b>= 2 First Digits of Item Identifier</p>
+                    <p style="margin-left:150px">  <b>15. Id_Item_Second</b> = 1 Middle Digit of Item Identifier</p>
+                    <p style="margin-left:150px">  <b>16. Id_Item_Third </b>= 2 Last Digit of Item Identifier </p>
+                    <p style="margin-left:150px">  <b>17. Class_Outlet_Per_Year </b>= Year classification</p>
+                    <p style="margin-left:150px">  <b>18. Class_Item_Weight</b> = Item Weigth Classification</p>
+                    <p style="margin-left:150px">  <b>19. Class_Item_Visibility</b> = Item Visibility Classification</p>
+                    <p style="margin-left:150px">  <b>20. Item_Sales </b>= Total Item Sales</p>
+                    <p style="margin-left:150px">  <b>21. Item_MRP_AVG </b>= Item MRP Average</p>
+                    <p style="margin-left:150px">  <b>22. Item_Sales_AVG </b>= Item Sales Average</p>
+                    <p style="margin-left:150px">  <b>23. Class_Item_MRP </b>= Item MRP Classification</p>
+                    <p style="margin-left:150px">  <b>24. Outlet_Item_Sales_AVG </b>= Outlet Item Sales Average</p>
+
+                </div>
+                <table class="table table-striped" , style="margin-right: 30px;margin-left: 25px;margin-top: 30px;"> 
+                    <thead>
+                        <tr>
+                            {% for item in data.columns %}
+                                <th> {{item}}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for index, item in data.iterrows() %}
+                            <tr>
+                                {% for col in item %}
+                                    <td> {{col}}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+                       
+        {% endblock body%}
+    </body>
+</html>

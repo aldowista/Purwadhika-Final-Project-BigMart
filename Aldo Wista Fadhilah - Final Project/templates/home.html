@@ -1,0 +1,101 @@
+<!-- Digabung dengan prediction -->
+{% extends 'layout.html'%}
+
+{% block body%}
+<html>
+    <head>
+        <style>
+            .row {
+               /* border: 2px solid red; */
+               padding: 20px;
+            }
+            .tab{
+                text-indent: 20px;
+                text-align:justify;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="margin-top:20px"><center> Sales Prediction for Big Mart Outlets</center></h1>
+        </div>
+        <div class="row">
+            <div class="col", style="margin-left: 40px">
+                <img src="https://english.onlinekhabar.com/wp-content/uploads/2016/08/Big-Mart-Logo.jpg" height="350px" width="550">
+            </div>
+            <div class="col", , style="margin-right: 40px">
+                <h4> Data BigMart</h4>
+                <p class='tab'>The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities. Also, certain attributes of each product and store have been defined. The aim is to build a predictive model and predict the sales of each product at a particular outlet. </p>
+                <p class='tab'>Using this model, BigMart will try to understand the properties of products and outlets which play a key role in increasing sales.</p>         
+                <p class='tab'>Please note that the data may have missing values as some stores might not report all the data due to technical glitches. Hence, it will be required to treat them accordingly</p>
+                <div>
+                    <a href="bigmart"><button type="button" class="btn btn-info" > Read More...</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="Container" style="margin-top:25px;">
+            <h1><center> Prediction</center></h1>
+        <div class="container pt-5"> 
+            <div class="row justify-content-center"> 
+                <div class="col-md-6 mt-3">
+                    <h3>Fill This From to Predict!</h3>
+                    <form action="/" method="POST">
+                        <!-- Item Identifier -->
+                        <select name="Item_Identifier" class="form-control form-control-sm" style="margin-top:5px">
+                            <option value="" disabled selected>Select Item Identifier</option>
+                            {% for item in data_item_identifier %}
+                                <option value="{{item}}">{{item}}</option>
+                            {% endfor %}
+                        </select> 
+
+                        <!-- Outlet Location Type -->
+                        <select name="Outlet_Location_Type" class="form-control form-control-sm" style="margin-top:5px"> 
+                            <option value="" disabled selected>Select Location Type</option>
+                            {% for item in data_location_type %}
+                                <option value="{{item}}">{{item}}</option>
+                            {% endfor %}
+                        </select>
+
+                        <!-- Item Fat Content -->
+                        <select name="Item_Fat_Content" class="form-control form-control-sm" style="margin-top:5px">
+                            <option value="" disabled selected>Select Item Fat Content</option>
+                            {% for item in data_item_fat %}
+                                <option value="{{item}}">{{item}}</option>
+                            {% endfor %}
+                        </select>
+
+                        <!-- Item Type -->
+                        <select name="Item_Type" class="form-control form-control-sm" style="margin-top:5px">
+                            <option value="" disabled selected>Select Item Type</option>
+                            {% for item in data_item_type %}
+                                <option value="{{item}}">{{item}}</option>
+                            {% endfor %}
+                        </select>   
+                        
+                        <!-- Outlet Identifier -->
+                        <select name="Outlet_Identifier" class="form-control form-control-sm" style="margin-top:5px">
+                            <option value="" disabled selected>Select Outlet Identifier</option>
+                            {% for item in data_outlet_identifier %}
+                                <option value="{{item}}">{{item}}</option>
+                            {% endfor %}
+                        </select> 
+
+                        <!-- Outlet Type -->
+                        <select name="Outlet_Type" class="form-control form-control-sm" style="margin-top:5px">
+                            <option value="" disabled selected>Select Outlet Type</option>
+                            {% for item in data_outlet_type %}
+                                <option value="{{item}}">{{item}}</option>
+                            {% endfor %}
+                        </select> 
+
+                        <!-- Item MRP -->
+                        <input type="float" name="Item_MRP" placeholder="Item MRP" min="0" max="20" class="form-control form-control-sm mt-2">
+
+                        <button type="submit" class="btn btn-success mt-3">Let's Predict!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock body %}

@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+<html>
+    <head>
+
+    </head>
+    <body>
+        {% block body %}
+        <div class="container">
+            <h1 style="margin-bottom: 20px;margin-top: 20px;"><center> 5 Item dengan penjualan terbanyak</center></h1>
+            <table class="table table-striped" , style="margin-right: 30px;margin-left: 25px;margin-top: 30px;"> 
+                <thead>
+                    <tr>
+                        {% for item in data_item_terlaris.columns %}
+                            <th> {{item}}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, item in data_item_terlaris.iterrows() %}
+                        <tr>
+                            {% for col in item %}
+                                <td> {{col}}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <h1 style="margin-bottom: 20px;margin-top: 20px;"><center> 5 Item dengan pemasukan terbesar </center></h1>
+        </div>
+        <table class="table table-striped" , style="margin-right: 30px;margin-left: 25px;margin-top: 30px;"> 
+            <thead>
+                <tr>
+                    {% for item in item_pemasukan_terbesar.columns %}
+                        <th> {{item}}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, item in item_pemasukan_terbesar.iterrows() %}
+                    <tr>
+                        {% for col in item %}
+                            <td> {{col}}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="container">
+            <h1><center> Lokasi dengan pendapatan terbanyak</center></h1>
+        </div>
+        <table class="table table-striped" , style="margin-right: 30px;margin-left: 25px;margin-top: 30px;"> 
+            <thead>
+                <tr>
+                    {% for item in data_lokasi_pendapatan_terbanyak.columns %}
+                        <th> {{item}}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, item in data_lokasi_pendapatan_terbanyak.iterrows() %}
+                    <tr>
+                        {% for col in item %}
+                            <td> {{col}}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endblock body%}
+    </body>
+</html>
